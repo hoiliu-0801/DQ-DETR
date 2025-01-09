@@ -1,0 +1,23 @@
+name: dqdetr
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+dependencies:
+  - python
+  - pytorch::pytorch-cuda
+  - pytorch::pytorch
+  - pytorch::torchvision
+  - nvidia::cuda-toolkit
+  - addict
+  - pycocotools
+  - scipy
+  - submitit
+  - termcolor
+  - timm
+  - yapf
+  - cython=0.29.*
+  - pip
+  - pip:
+      - git+https://github.com/jwwangchn/cocoapi-aitod.git#subdirectory=aitodpycocotools
+      - git+https://github.com/cocodataset/panopticapi.git#egg=panopticapi

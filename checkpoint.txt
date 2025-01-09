@@ -1,4 +1,0 @@
-Download checkpoint from https://reurl.cc/NlvV2Q.
-
-1. pretrain_model.pth => pretained model
-2. dqdetr_best305.pth => DQ-DETR model on AITOD-V2 with 30.5 AP
