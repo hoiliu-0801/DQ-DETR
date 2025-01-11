@@ -117,6 +117,7 @@ data
 docs/modelzoo_statistics.md
 mmdet/.mim
 work_dirs/
+logs/
 
 # Pytorch
 *.pth

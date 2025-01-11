@@ -13,6 +13,13 @@
 
 [2024/5/3]: **DNTR** has been accepted by **TGRS 2024**. 🔥🔥🔥
 
+## Our works on Tiny Object Detection
+
+| Title       | Venue     | Links                                                                                       | 
+|-------------|-----------|---------------------------------------------------------------------------------------------|
+| **DNTR**    | TGRS 2024 | [Paper](https://arxiv.org/abs/2406.05755) \| [code](https://github.com/hoiliu-0801/DNTR)    | 
+| **DQ-DETR** | ECCV 2024 | [Paper](https://arxiv.org/abs/2404.03507) \| [code](https://github.com/hoiliu-0801/DQ-DETR) | 
+
 ## Installation -- Compiling CUDA operators
 
 * The code are built upon the official [DINO](https://github.com/IDEA-Research/DINO) repository.
@@ -29,28 +36,41 @@ python test.py
 cd ../../..
 ```
 
-<!-- # bash scripts/DQ_eval.sh /nfs/home/hoiliu/dqdetr/weights/dqdetr_best305.pth -->
+## AI-TOD-v1/2 Datasets and Checkpoints
+
+* Step 1: Download the datasets from
+  the [the link](https://drive.google.com/drive/folders/1hkbcZ3TPABx3QxoCufE1KAPu55Ibw-8d?usp=sharing).
+* Step 2: Download checkpoint
+  from [the link](https://drive.google.com/drive/folders/1XWs2CLLsA_idGNU4xe-Ny6rR1sdiKVZ8?usp=drive_link).
+* Step 3: Organize the downloaded files in the following way.
+
+```text
+├─ Checkpoints
+│   ├─ dqdetr_best305.pth ⇒ DQ-DETR model on AITOD-V2 with 30.5 AP
+│   └─ pretrain_model.pth ⇒ pretained model
+├─ Dataset
+│   └─ aitod
+│       ├─ annotations
+│       └─ images
+│           ├─ test
+│           ├─ train
+│           ├─ trainval
+│           └─ val
+├─ DQ-DETR
+│   ├─ ...
+```
 
 ## Eval models
 
 ```sh
-scripts/DQ_eval.sh /path/to/your/dataset /path/to/your/checkpoint
+scripts/DQ_eval.sh ../Dataset/aitod ../Checkpoints/dqdetr_best305.pth
 ```
 
 ## Trained Model
 
-* Changed the pretrained model path in DQ.sh
-
 ```sh
-CUDA_VISIBLE_DEVICES=5,6,7 bash scripts/DQ.sh /path/to/your/dataset
+CUDA_VISIBLE_DEVICES=5,6,7 scripts/DQ_train.sh ../Dataset/aitod
 ```
-
-## Our works on Tiny Object Detection
-
-| Title       | Venue     | Links                                                                                       | 
-|-------------|-----------|---------------------------------------------------------------------------------------------|
-| **DNTR**    | TGRS 2024 | [Paper](https://arxiv.org/abs/2406.05755) \| [code](https://github.com/hoiliu-0801/DNTR)    | 
-| **DQ-DETR** | ECCV 2024 | [Paper](https://arxiv.org/abs/2404.03507) \| [code](https://github.com/hoiliu-0801/DQ-DETR) | 
 
 ## Performance
 
@@ -63,36 +83,7 @@ denotes Faster R-CNN and DetectoRS, respectively.
 |   NWD-RKA    |   R-50   |   23.4   |      53.5       |      16.8       |       8.7       |      23.8      |      28.5      |      36.0      |
 |   DAB-DETR   |   R-50   |   22.4   |      55.6       |      14.3       |       9.0       |      21.7      |      28.3      |      38.7      | 
 |  DINO-DETR   |   R-50   |   25.9   |      61.3       |      17.5       |      12.7       |      25.3      |      32.0      |      39.7      | 
-|   DQ-DETR    |   R-50   | **30.5** |    **69.2**     |    **22.7**     |    **15.2**     |    **30.9**    |    **36.8**    |    **45.5**    | 
-
-## AI-TOD-v1 and AI-TOD-v2 Datasets
-
-* Step 1: Download the datasets from the below link.
-
-```sh
-https://drive.google.com/drive/folders/1hkbcZ3TPABx3QxoCufE1KAPu55Ibw-8d?usp=sharing
-```
-
-* Step 2: Organize the downloaded files in the following way.
-
-```text
-├─ Dataset
-│   └─ aitod
-│       ├─ annotations
-│       ├─ images
-│       ├─ test
-│       ├─ train
-│       ├─ trainval
-│       └─ val
-├─ DQ-DETR
-```
-
-## Pretrained Weights
-
-Download checkpoint from https://reurl.cc/NlvV2Q.
-
-1. pretrain_model.pth ⇒ pretained model
-2. dqdetr_best305.pth ⇒ DQ-DETR model on AITOD-V2 with 30.5 AP
+|   DQ-DETR    |   R-50   | **30.5** |    **69.2**     |    **22.7**     |    **15.2**     |    **30.9**    |    **36.8**    |    **45.5**    |
 
 ## Citation
 
