@@ -16,6 +16,7 @@ import torch.nn.functional as F
 import util.misc as utils
 from datasets.coco_eval import CocoEvaluator
 from datasets.panoptic_eval import PanopticEvaluator
+import util.dump as iv
 
 print_freq = 5000
 CCM_LOSS = torch.nn.CrossEntropyLoss()
@@ -59,10 +60,18 @@ def train_one_epoch(model: torch.nn.Module, criterion: torch.nn.Module,
         targets = [{k: v.to(device) for k, v in t.items()} for t in targets]
 
         with torch.cuda.amp.autocast(enabled=args.amp):
+            if args.dump_inference:
+                iv.register_hooks(model)
+                torch.no_grad()
+
             if need_tgt_for_training:
                 outputs = model(samples, targets)
             else:
                 outputs = model(samples)
+
+            if args.dump_inference:
+                iv.save_data(targets, output=os.path.join(args.output_dir, 'npy'))
+                quit()
         
             loss_dict = criterion(outputs, targets)
             weight_dict = criterion.weight_dict

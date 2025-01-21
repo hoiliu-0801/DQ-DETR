@@ -69,8 +69,17 @@ scripts/DQ_eval.sh ../Dataset/aitod ../Checkpoints/dqdetr_best305.pth
 ## Trained Model
 
 ```sh
-CUDA_VISIBLE_DEVICES=5,6,7 scripts/DQ_train.sh ../Dataset/aitod
+CUDA_VISIBLE_DEVICES=5,6,7 scripts/DQ_train.sh ../Dataset/aitod ../Checkpoints/pretrain_model.pth
 ```
+
+## Inference Visualization
+
+dump the tensors for visualization, only for the first image in the test set
+```sh
+scripts/DQ_train.sh ../Dataset/aitod ../Checkpoints/dqdetr_best305.pth --dump_inference
+```
+
+then visualize the dumped tensors by [vis.ipynb](./vis.ipynb)
 
 ## Performance
 
