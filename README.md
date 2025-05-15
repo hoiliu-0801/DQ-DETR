@@ -52,7 +52,7 @@ DAB-DETR | R-50 | 22.4 | 55.6 | 14.3 | 9.0 | 21.7 | 28.3 | 38.7 |
 DINO-DETR | R-50 | 25.9 | 61.3 | 17.5 | 12.7 | 25.3 | 32.0 | 39.7 | 
 DQ-DETR | R-50 | **30.5** | **69.2** | **22.7** | **15.2** | **30.9** | **36.8** | **45.5** | 
 
-## AI-TOD-v1 and AI-TOD-v2 Datasets
+## AI-TOD-v1 and AI-TOD-v2 Datasets (Don’t forget to leave us a ⭐)
 * Step 1: Download the datasets from the below link.
 ```sh
 https://drive.google.com/drive/folders/1CowS5BrujefWQxxlmOFfUuLOfUUm8w6U?usp=sharing
