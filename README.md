@@ -75,7 +75,7 @@ https://drive.google.com/drive/folders/1CowS5BrujefWQxxlmOFfUuLOfUUm8w6U?usp=sha
 ## Pretrained Weights 
 * Referred to checkpoint.txt for more details.
 
-* https://reurl.cc/NlvV2Q
+* [https://reurl.cc/NlvV2Q](https://drive.google.com/drive/folders/1xX3VCn_y2aZUqrxgtu5qD-bYq2vH1uI3?usp=drive_link)
 
 
 ## Citation
